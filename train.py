@@ -1,16 +1,15 @@
 import os
-os.chdir(r'K:\Isoprene')
-import pandas as pd
 import torch
+import pandas as pd
 from torch import nn
 from tqdm import tqdm
-from models import get_model, set_parameter_not_requires_grad
-import matplotlib.pyplot as plt
 import xgboost as xgb
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 from sklearn.svm import SVR
-from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+from models import get_model, set_parameter_not_requires_grad
 from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor
 
 
 
@@ -310,5 +309,6 @@ def ml_predict(res, city, seed = 2543, kfold = True):
         svr_all_reg = SVR().fit(train_x_, train_y_)
         
         lr_all_reg = LinearRegression().fit(train_x_, train_y_)
+
 
 
